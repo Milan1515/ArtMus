@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col">
+        <app-card [exibitions]="exibition" [edit]="!edit" (editClicked)="onEditClicked()"></app-card>
+    </div>
+</div>
+<div class="row" *ngIf="!edit">
+    <div class="col-6" *ngFor="let artwork of exibitionArtworks">
+        <app-artwork-item [artwork]="artwork"></app-artwork-item>
+    </div>
+</div>
+<div class="row" *ngIf="edit">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-dark float-end" (click)="edit=false">Done</button>
+            </div>
+        </div>
+        <app-artwork-edit [exibitionArtworks]="exibitionArtworks" 
+                          [nonExibitionArtworks]="filteredArtworks"  
+                          (addArtwork)="onAddArtwork($event)"
+                          (removeArtwork)="onRemoveArtwork($event)"
+                          ></app-artwork-edit>
+    </div>
+</div>

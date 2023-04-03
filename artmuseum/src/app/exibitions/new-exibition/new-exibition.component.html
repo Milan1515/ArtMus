@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-4 offset-4">
+        <form [formGroup]="exibitionForm">
+            <div class="form-group">
+              <label for="titleInput">Title</label>
+              <input formControlName="title" type="text" class="form-control" id="titleInput">
+            </div>
+            <div class="form-group">
+              <label for="descriptionInput">Description</label>
+              <input formControlName="description" type="textarea" class="form-control" id="descriptionInput">
+            </div>
+            <div class="form-group">
+                <label for="locationSelect">Location</label>
+                <select formControlName="location" class="form-control" id="locationSelect">
+                    <option value="">--</option>
+                    <option [value]="loc._id" *ngFor="let loc of locations">{{loc.site}}, {{loc.room}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-2 offset-10">
+                    <button (click)="onSubmit()"  class="btn btn-dark">Add</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

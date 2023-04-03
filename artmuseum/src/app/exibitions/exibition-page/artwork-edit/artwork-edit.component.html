@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-6">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let art of nonExibitionArtworks">
+                    <td>{{art.title}}</td>
+                    <td>{{art.author}}</td>
+                <td><button class="btn btn-dark" (click)="onAddClicked(art)" >Add</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="col-6">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let art of exibitionArtworks">
+                    <td>{{art.title}}</td>
+                    <td>{{art.author}}</td>
+                <td><button class="btn btn-dark" (click)="onRemoveClicked(art)" >Remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+        
+    </div>
+</div>
